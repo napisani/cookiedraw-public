@@ -1,0 +1,14 @@
+<div class="btn-block">
+  <input
+    style="display: none"
+    type="file" (change)="onFileChanged($event)"
+    #fileInput>
+  <button pButton
+          type="button"
+          icon="pi pi-upload"
+          [label]="buttonText"
+          [disabled]="!enabled"
+          (click)="fileInput.click()">
+  </button>
+</div>
+

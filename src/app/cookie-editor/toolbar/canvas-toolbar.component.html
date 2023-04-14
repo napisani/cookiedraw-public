@@ -1,0 +1,98 @@
+<p-card>
+  <p-toolbar>
+
+    <div class="ui-toolbar-group-left">
+      <button pButton
+              type="button"
+              label="Start Over"
+              class="ui-button-secondary btn"
+              [disabled]="!isEnabled(actionType.CLEAR_CANVAS)"
+              icon="fas fa-trash-alt"
+              (click)="handleClear()">
+      </button>
+
+      <button pButton
+              type="button"
+              label="Undo"
+              class="ui-button-secondary btn"
+              [disabled]="!isEnabled(actionType.UNDO)"
+              icon="fas fa-undo"
+              (click)="handleUndo()">
+      </button>
+      <button pButton
+              type="button"
+              label="Redo"
+              class="ui-button-secondary btn"
+              [disabled]="!isEnabled(actionType.REDO)"
+              icon="fas fa-redo"
+              (click)="handleRedo()">
+      </button>
+
+      <div class="toolbar-item" *ngIf="isEnabled(actionType.ALPHA_ADJUST)">
+        <label id="alpha-adjust-label" for="alpha-adjust">Image Transparency: </label>
+        <p-slider id="alpha-adjust"
+                  [(ngModel)]="canvasAlpha"
+                  [min]="1"
+                  [max]="100"
+                  (onChange)="handleCanvasAlphaChange($event)"></p-slider>
+        <label id="alpha-value"> {{canvasAlpha}} </label>
+      </div>
+
+    </div>
+
+
+    <div class="ui-toolbar-group-right">
+      <button pButton
+              type="button"
+              label="Help"
+              class="ui-button-secondary btn"
+              icon="far fa-question-circle"
+              (click)="handleTutorialOpenChange(true)">
+      </button>
+      <button pButton
+              type="button"
+              [ngClass]="{'btn': true, 'ui-button-secondary' : canvasState?.mode !== canvasMode.ADD_IMAGE, 'ui-button-success' : canvasState?.mode === canvasMode.ADD_IMAGE }"
+              label="Edit Image"
+              [disabled]="!isEnabled(actionType.ADD_IMAGE_MODE_TOGGLE)"
+              icon="fa fa-image"
+              (click)="handleSwitchToAddImageMode()">
+      </button>
+
+      <button pButton type="button"
+              label="Connect Lines"
+              [ngClass]="{'btn': true, 'ui-button-secondary' : canvasState?.mode !== canvasMode.ADD_LINES, 'ui-button-success' : canvasState?.mode === canvasMode.ADD_LINES }"
+              [disabled]="!isEnabled(actionType.ADD_LINE_MODE_TOGGLE)"
+              icon="fas fa-draw-polygon"
+              (click)="handleSwitchToAddLineMode()">
+      </button>
+
+      <button pButton type="button"
+              label="Curve Lines"
+              [ngClass]="{'btn': true, 'ui-button-secondary' : canvasState?.mode !== canvasMode.QUAD_ADJUST, 'ui-button-success' : canvasState?.mode === canvasMode.QUAD_ADJUST }"
+
+              [disabled]="!isEnabled(actionType.QUAD_ADJUST_MODE_TOGGLE)"
+              icon="fas fa-bezier-curve"
+              (click)="handleSwitchToAdjustQuadMode()">
+      </button>
+
+
+    </div>
+  </p-toolbar>
+</p-card>
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+
+<app-image-upload-modal
+  [canvasState]="canvasState"
+  [(open)]="openImageDialog">
+</app-image-upload-modal>
+
+
+<app-tutorial-modal
+  [canvasState]="canvasState"
+  [open]="openTutorialDialog"
+  (openChange)="handleTutorialOpenChange($event)">
+</app-tutorial-modal>
+
+

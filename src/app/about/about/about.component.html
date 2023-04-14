@@ -1,0 +1,42 @@
+<div>
+  <p-accordion>
+    <p-accordionTab header="About Cookie Draw" [selected]="openTab === '/about'">
+      <p>
+        Cookie Draw was created with cookie artists in mind. Cookie Draw attempts to improve the cookie
+        cutter design process in the following ways:
+      </p>
+      <ul>
+        <li>Simplifying Design – Cookie cutters are simple, right? Basically, an extruded 3-dimensional outline with a
+          handle for rigidity and ergonomics. However, 3D modeling, and other CAD software, can be difficult to
+          master.
+          Cookie Draw attempts to simplify the cookie cutter design process, so artists can focus on the designs instead
+          of
+          the software.
+        </li>
+        <li>
+          Improving Organization – With Cookie Draw you can save your cookie cutters, organize them by relevant tags and
+          share them with the rest of the world!
+        </li>
+        <li>
+          Supplying Convenience – Cookie Draw provides the ability to design custom cookie cutters and have them shipped
+          right to your door.
+        </li>
+      </ul>
+      <p>
+        Cookie draw is an independently developed and maintained webapp.
+        I want to make Cookie Draw even better, please feel free to provide feedback by emailing me at:
+        cookiedraw88@gmail.com
+      </p>
+
+    </p-accordionTab>
+    <p-accordionTab header="Privacy Policy" [selected]="openTab === '/privacy'">
+      <app-privacy-policy>
+      </app-privacy-policy>
+    </p-accordionTab>
+    <p-accordionTab header="Terms of Service" [selected]="openTab === '/terms'">
+      <app-terms-of-service>
+      </app-terms-of-service>
+    </p-accordionTab>
+  </p-accordion>
+
+</div>

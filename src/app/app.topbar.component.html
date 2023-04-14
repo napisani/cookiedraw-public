@@ -1,0 +1,49 @@
+<div class="layout-topbar">
+  <a href="#" class="layout-topbar-logo">
+    <img id="topbar-logo" src="assets/layout/images/logo-olympia.png">
+    <span class="title-text">Cookie Draw</span>
+  </a>
+
+  <a href="#" class="layout-menu-button" (click)="app.onMenuButtonClick($event)">
+    <i class="fa fa-bars"></i>
+  </a>
+
+
+<!--  <ul class="layout-topbar-usermenu" [ngClass]="{'layout-topbar-usermenu-active fadeInDown': app.topbarMenuActive}">-->
+<!--    <li class="layout-topbar-usermenu-header">-->
+<!--      <div class="layout-topbar-usermenu-info" *ngIf="user != null">-->
+<!--        <div class="layout-topbar-usermenu-name" *ngIf="user.displayName != null">{{user.displayName}}</div>-->
+<!--      </div>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <a [routerLink]="['/changepassword']">-->
+<!--        <span class="topbar-item-name">Change Password</span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li #logout>-->
+<!--      <a href="#" (click)="handleLoggout()">-->
+<!--        <i class="fa fa-fw fa-cog"></i>-->
+<!--        <span class="topbar-item-name">Logout</span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--  <ul class="layout-topbar-icons">-->
+<!--    <li *ngIf="!auth">-->
+<!--      <a class="layout-topbar-icon-purple" [routerLink]="['/signup']">-->
+<!--        <i class="fas fa-user-plus"></i>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li *ngIf="!auth">-->
+<!--      <a class="layout-topbar-icon-yellow" [routerLink]="['/login']">-->
+<!--        <i class="fas fa-sign-in-alt"></i>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li *ngIf="auth || app.topbarMenuActive">-->
+<!--      <a href="#" class="layout-topbar-icon-yellow"-->
+<!--         (click)="app.onTopbarMenuButtonClick($event)">-->
+<!--        <i class="far fa-user"></i>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+
+</div>

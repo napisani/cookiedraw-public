@@ -1,0 +1,23 @@
+<p-dialog header="Background Image" [visible]="open" (visibleChange)="handleOpenChange($event)" [modal]="true">
+  <p>Would you like to upload a new image?</p>
+  <p-footer>
+    <app-file-input buttonText="Upload Image"
+                    [enabled]="true"
+                    (upload)="handleImageUpload($event)">
+    </app-file-input>
+    <button type="button"
+            pButton
+            icon="fas fa-pencil-alt"
+            (click)="handleFreehand()"
+            label="Freehand"
+            class="ui-button-secondary">
+    </button>
+    <button type="button"
+            pButton
+            icon="pi pi-times"
+            (click)="handleOpenChange(false)"
+            label="Close"
+            class="ui-button-secondary">
+    </button>
+  </p-footer>
+</p-dialog>

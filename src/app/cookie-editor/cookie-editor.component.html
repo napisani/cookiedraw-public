@@ -1,0 +1,25 @@
+<div class="p-grid">
+  <div class="p-col-12" id="toolbar-container">
+    <app-toolbar *ngIf="loaded" [continueAdd]="continueAdd">
+    </app-toolbar>
+  </div>
+</div>
+<div class="editor-container">
+  <div id="canvas-container" [ngStyle]="{
+    width: (canvasConsts.canvasWidth + 30) + 'px',
+    margin:'8px'
+   }">
+    <app-canvas  *ngIf="loaded">
+    </app-canvas>
+  </div>
+
+  <div id="preview-3d-container" [ngStyle]="{
+    width: (canvasConsts.previewWidth + 30) + 'px',
+      margin:'8px'
+    }">
+    <app-extrusion-preview  *ngIf="loaded">
+    </app-extrusion-preview>
+  </div>
+</div>
+
+

@@ -1,0 +1,11 @@
+<p-card header="Drawing Canvas">
+  <canvas #cookieCanvas
+          appMouseStateCollector
+          [mouseState]="mouseState"
+          (mouseStateChange)="handleMouseStateChange($event)"
+          (contextmenu)="$event.preventDefault();"
+          [width]="windowWidth"
+          [height]="windowHeight"
+          class="drawing-canvas">
+  </canvas>
+</p-card>

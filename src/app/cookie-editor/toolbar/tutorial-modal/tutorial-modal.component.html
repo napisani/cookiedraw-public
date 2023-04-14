@@ -1,0 +1,30 @@
+<p-dialog header="Getting Started" [visible]="open" (visibleChange)="handleOpenChange($event)" [modal]="true">
+  <div class="ui-dialog-content">
+    <p-carousel [value]="tutorialSteps" [numVisible]="1">
+      <ng-template let-step pTemplate="item">
+        <div class="step-details">
+          <div class="p-grid p-nogutter">
+            <div class="p-col-12 step-data">
+              <div class="step-title">
+                <h2 *ngIf="step.seq > 0">Step {{step.seq}}: {{step.title}}</h2>
+                <h1 *ngIf="step.seq <= 0">{{step.title}}</h1>
+              </div>
+              <div class="step-instruction">{{step.instruction}}</div>
+            </div>
+            <div *ngIf="step.seq > 0" class="p-col-12 step-img">
+              <img src="assets/tutorial/step_{{step.seq}}.gif"/>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <p-footer>
+    <button type="button"
+            pButton
+            (click)="handleOpenChange(false)"
+            label="Start Drawing!"
+            class="ui-button-secondary">
+    </button>
+  </p-footer>
+</p-dialog>

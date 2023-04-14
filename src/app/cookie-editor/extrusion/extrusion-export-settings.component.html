@@ -1,0 +1,58 @@
+<div class="ui-dialog-content">
+  <form [formGroup]="fg" *ngIf="fg!= null">
+    <div class="p-grid">
+      <div class="p-col-3">
+        <label>Cutter Size</label>
+      </div>
+      <div class="p-col-9">
+        <p-dropdown appendTo="body" [tooltip]="'Feel free to use a custom value by typing any size you want'"
+                    [options]="sizesSTD" formControlName="size"
+                    [editable]="true" required></p-dropdown>
+        Inches
+      </div>
+      <div class="p-col-3">
+        <label>Height</label>
+      </div>
+      <div class="p-col-9">
+        <p-dropdown appendTo="body" [tooltip]="'Feel free to use a custom value by typing any height you want'"
+                    [options]="heightsSTD" formControlName="height"
+                    [editable]="true" required></p-dropdown>
+        Inches
+      </div>
+      <div class="p-col-3">
+        <label>Thickness</label>
+      </div>
+      <div class="p-col-9">
+        <p-dropdown appendTo="body" [tooltip]="'Feel free to use a custom value by typing any thickness you want'"
+                    [options]="thicknessesMM" formControlName="thickness"
+                    [editable]="true" required></p-dropdown>
+        mm
+      </div>
+
+      <div class="p-col-4">
+        <button pButton
+                type="button"
+                label="Download 3D Model"
+                class="ui-button-secondary btn"
+                style="margin: 0.5em"
+                [disabled]="!enableExport()"
+                icon="fas fa-download"
+                (click)="handleExport()">
+        </button>
+      </div>
+      <div class="p-col-4">
+        <button pButton
+                type="button"
+                label="Update 3D Model"
+                class="ui-button-primary btn"
+                [disabled]="!enableRender()"
+                icon="fas fa-dice-d6"
+                style="margin: 0.5em"
+                (click)="handleRender()">
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>
+

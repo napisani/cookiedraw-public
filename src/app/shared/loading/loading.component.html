@@ -1,0 +1,25 @@
+<!--<div class="spinner" *ngIf="isLoading() | async">loading...</div>-->
+<!--<div class="spinner" >-->
+<!--<img class="tire-img" src="assets/loading/car_tire.png" alt="loading...">-->
+<!--</div>-->
+
+<!--<p-progressSpinner ></p-progressSpinner>-->
+<div *ngIf="loading" id="overlay"></div>
+
+
+<div *ngIf="loading" class="preloader layer1">
+  <div class="preloader-content layer2">
+    <div class="preloader-line layer3">
+      <div></div>
+    </div>
+    <div class="preloader-line">
+      <div></div>
+    </div>
+    <div class="preloader-line">
+      <div></div>
+    </div>
+    <div class="preloader-line">
+      <div></div>
+    </div>
+  </div>
+</div>

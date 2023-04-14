@@ -1,0 +1,18 @@
+<p-card [header]="getHeader()">
+  <div class="spin-container">
+    <label class="spin-label" for="spin">Spin</label>
+    <p-inputSwitch
+      name="spin"
+      id="spin"
+      [(ngModel)]="engServ.spin"></p-inputSwitch>
+  </div>
+  <canvas #rendererCanvas
+          id="renderCanvas"
+          [width]="windowWidth"
+          [height]="windowHeight"></canvas>
+
+  <app-extrusion-export-settings [cookieCutter]="cookieCutter"
+                                 (download)="download.emit()"
+                                 (addedToCart)="addedToCart.emit()">
+  </app-extrusion-export-settings>
+</p-card>
